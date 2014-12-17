@@ -1,6 +1,8 @@
 require 'prawn'
 require 'date'
+require_relative './menu_document_extension'
 
+Prawn::Document.extensions << MenuDocumentExtension
 pdf = Prawn::Document.new
 
 pdf.font 'Helvetica'
@@ -16,28 +18,18 @@ pdf.grid([2,1],[6,3]).bounding_box do
   pdf.pad_top(25) { pdf.text 'Appetizers', size: 24, align: :center, kerning: true, character_spacing: 2 }
   pdf.stroke_horizontal_rule
   pdf.pad_top(10) { pdf.text 'Champignon Grille', size: 14, align: :center }
-  pdf.font('Times-Roman') do
-    pdf.text 'grilled portobello mushroom / arugula / cherry tomatoes', size: 12, align: :center
-  end
+  pdf.detail 'grilled portobello mushroom / arugula / cherry tomatoes'
   pdf.pad_top(10) { pdf.text 'P.E.I Mussels', size: 14, align: :center }
-  pdf.font('Times-Roman') do
-    pdf.text 'steamed with leeks / white wine / over garlic bread', size: 12, align: :center
-  end
+  pdf.detail 'steamed with leeks / white wine / over garlic bread'
 
   pdf.pad_top(25) { pdf.text 'Entrees', size: 24, align: :center, kerning: true, character_spacing: 2 }
   pdf.stroke_horizontal_rule
   pdf.pad_top(10) { pdf.text 'Penne alla Vodka', size: 14, align: :center }
-  pdf.font('Times-Roman') do
-    pdf.text 'vodka sauce / shallots / shiitake mushrooms / asparagus', size: 12, align: :center
-  end
+  pdf.detail 'vodka sauce / shallots / shiitake mushrooms / asparagus'
   pdf.pad_top(10) { pdf.text 'Seared Yellow Fin Tuna', size: 14, align: :center }
-  pdf.font('Times-Roman') do
-    pdf.text 'marinated cucumber / chopped lettuce / couscous', size: 12, align: :center
-  end
+  pdf.detail 'marinated cucumber / chopped lettuce / couscous'
   pdf.pad_top(10) { pdf.text 'Rib-Eye Steak - 15 Oz.', size: 14, align: :center }
-  pdf.font('Times-Roman') do
-    pdf.text 'roasted rosemary potatoes / creaned spinach', size: 12, align: :center
-  end
+  pdf.detail 'roasted rosemary potatoes / creaned spinach'
 
   pdf.pad_top(25) { pdf.text 'Desserts', size: 24, align: :center, kerning: true, character_spacing: 2 }
   pdf.stroke_horizontal_rule
