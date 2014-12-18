@@ -15,27 +15,27 @@ pdf.grid([1,1],[1,3]).bounding_box do
 end
 
 pdf.grid([2,1],[6,3]).bounding_box do
-  pdf.pad_top(25) { pdf.text 'Appetizers', size: 24, align: :center, kerning: true, character_spacing: 2 }
+  pdf.section 'Appetizers'
   pdf.stroke_horizontal_rule
-  pdf.pad_top(10) { pdf.text 'Champignon Grille', size: 14, align: :center }
+  pdf.item 'Champignon Grille'
   pdf.detail 'grilled portobello mushroom / arugula / cherry tomatoes'
-  pdf.pad_top(10) { pdf.text 'P.E.I Mussels', size: 14, align: :center }
+  pdf.item 'P.E.I Mussels'
   pdf.detail 'steamed with leeks / white wine / over garlic bread'
 
-  pdf.pad_top(25) { pdf.text 'Entrees', size: 24, align: :center, kerning: true, character_spacing: 2 }
+  pdf.section 'Entrees'
   pdf.stroke_horizontal_rule
-  pdf.pad_top(10) { pdf.text 'Penne alla Vodka', size: 14, align: :center }
+  pdf.item 'Penne alla Vodka'
   pdf.detail 'vodka sauce / shallots / shiitake mushrooms / asparagus'
-  pdf.pad_top(10) { pdf.text 'Seared Yellow Fin Tuna', size: 14, align: :center }
+  pdf.item 'Seared Yellow Fin Tuna'
   pdf.detail 'marinated cucumber / chopped lettuce / couscous'
-  pdf.pad_top(10) { pdf.text 'Rib-Eye Steak - 15 Oz.', size: 14, align: :center }
+  pdf.item 'Rib-Eye Steak - 15 Oz.'
   pdf.detail 'roasted rosemary potatoes / creaned spinach'
 
-  pdf.pad_top(25) { pdf.text 'Desserts', size: 24, align: :center, kerning: true, character_spacing: 2 }
+  pdf.section 'Desserts'
   pdf.stroke_horizontal_rule
-  pdf.pad_top(10) { pdf.text 'Tiramisu', size: 14, align: :center }
-  pdf.pad_top(10) { pdf.text 'Raspberry Sorbet', size: 14, align: :center }
-  pdf.pad_top(10) { pdf.text 'Ricotta Cheese Cake', size: 14, align: :center }
+  pdf.item 'Tiramisu'
+  pdf.item 'Raspberry Sorbet'
+  pdf.item 'Ricotta Cheese Cake'
 end
 
 pdf.render_file File.expand_path('../../output/menu_of_the_day.pdf', __FILE__)
