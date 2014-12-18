@@ -8,6 +8,6 @@ The following prawn features are used:
 - [x] bounding box
 - [x] curve
 - [x] padding
-- [ ] using extensions
+- [x] using extensions
 
 The generated pdf is at `output/menu_of_the_day.pdf`.
